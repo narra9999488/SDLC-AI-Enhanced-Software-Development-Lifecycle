@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Base Layout */
+/* body {
+  font-family: 'Inter', sans-serif;
+  background-color: #38597a;
+  margin: 0;
+  padding: 1rem;
+  color: #1e1e1e;
+} */
+ 
+body {
+  font-family: 'Inter', sans-serif;
+  background-image: url("sdlc.jpg"); /* 🔁 your path here */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed; /* optional for parallax effect */
+  color: #1c1c1c;
+  margin: 0;
+  padding: 1rem;
+}
+
+/* Main container with subtle background */
+.container {
+  max-width: 880px;
+  margin: auto;
+  background: #646484ec;  /* ← Professional light slate */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  color: #101111;
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+/* Top Buttons */
+.top-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.toggle-btn,
+.pdf-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-btn {
+  background-color: #3a4f66;
+  color: white;
+}
+
+.toggle-btn:hover {
+  background-color: #2d3e52;
+  transform: translateY(-1px);
+}
+
+.pdf-btn {
+  background-color: #26a269;
+  color: white;
+}
+
+.pdf-btn:hover {
+  background-color: #208c59;
+  transform: translateY(-1px);
+}
+
+/* Prompt Buttons */
+.prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.prompt-button {
+  display: inline-block;
+}
+.prompt-button {
+  float: none;
+  position: static;
+  text-align: center;
+}
+
+.prompt-button button {
+  background-color: #266530;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.prompt-button button:hover {
+  background-color: #305da8;
+}
+
+/* Chat Box */
+.chat-box {
+  background-color: #f1f4f9;
+  padding: 1rem;
+  max-height: none;
+  overflow-y: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #dbe2ea;
+  height: auto;
+}
+
+.message {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+.user {
+  background-color: #d7e7ff;
+  text-align: right;
+  margin-left: auto;
+}
+
+.bot {
+  background-color: #e4f5eb;
+  text-align: left;
+  margin-right: auto;
+}
+
+/* Input Form */
+.chat-form {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 0.65rem;
+  border-radius: 6px;
+  border: 1px solid #c4ccd6;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+}
+
+.chat-form button {
+  padding: 0.65rem 1.2rem;
+  background-color: #3f78d3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.chat-form button:hover {
+  background-color: #305da8;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #0e1117;
+  color: #f0f0f0;
+}
+
+body.dark .container {
+  background-color: #1b1f27;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .chat-box {
+  background-color: #212832;
+  border: 1px solid #2f3c4c;
+}
+
+body.dark .user {
+  background-color: #3c5580;
+}
+
+body.dark .bot {
+  background-color: #3d704a;
+}
+
+body.dark .chat-form input,
+body.dark .chat-form button {
+  background-color: #2c3543;
+  color: white;
+  border-color: #475569;
+}
+
+body.dark .toggle-btn {
+  background-color: #6c7a89;
+}
+
+body.dark .pdf-btn {
+  background-color: #319c60;
+}
+
+body.dark .prompt-button button {
+  background-color: #305da8;
+}
+@media print {
+  .top-controls, .chat-form {
+    display: none;
+  }
+  .chat-box {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+.clear-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background-color: #c0392b;
+}
+.logout-btn {
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.logout-btn:hover {
+  background-color: #574b90;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up - SDLC-AI</title>
+  <link rel="stylesheet" href="/static/style.css" />
+   <link rel="icon" href="/static/favicon.png" />
+  <style>
+    .form-container {
+      max-width: 400px;
+      margin: 5rem auto;
+      background: #393b3e;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      color: #f5f5f5;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #aad2ff;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding:0.75rem;
+      background-color: #3f78d3;
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #2f64b0;
+    }
+
+    .error {
+      color: #ff6b6b;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .info {
+      font-size: 0.85rem;
+      margin-top: -0.5rem;
+      color: #b5bcc7;
+    }
+
+    .link {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .link a {
+      color: #8dc1ff;
+      text-decoration: none;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Create Your Account</h2>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="post" action="/signup">
+      <label for="username">Email</label>
+      <input type="email" name="username" id="username" placeholder="you@example.com" required />
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required
+        pattern="(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}"
+        title="At least 6 characters, 1 uppercase, 1 number, and 1 special character" />
+      <div class="info">🔐 Use 6+ characters with uppercase, number, and symbol</div>
+
+      <button type="submit" class="btn-submit">Sign Up</button>
+    </form>
+
+    <div class="link">
+      Already have an account? <a href="/login">Log In</a>
+    </div>
+  </div>
+</body>
+</html>
